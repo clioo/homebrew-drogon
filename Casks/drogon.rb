@@ -34,9 +34,14 @@ cask "drogon" do
   ]
 
   caveats <<~EOS
-    This cask release is ad-hoc signed and not notarized. Install with --no-quarantine:
+    This cask release is ad-hoc signed and not notarized.
+
+    On Homebrew versions that support --no-quarantine, install with:
 
       brew install --cask --no-quarantine clioo/drogon/drogon
+
+    Homebrew 6 removed --no-quarantine. On those versions, install normally,
+    try to open Drogon.app, then choose Open Anyway in System Settings > Privacy & Security.
 
     Apple Silicon is supported; an Intel build is not currently published.
   EOS
