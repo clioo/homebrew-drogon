@@ -5,7 +5,7 @@ SEMVER = /\A\d+\.\d+\.\d+(?:-[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?(?:\+[0-9A-Za-z-
 SHA256 = /\A[0-9a-f]{64}\z/
 CAVEAT = /\n  caveats <<~EOS\n.*?\n  EOS\n/m
 
-AD_HOC_CAVEAT = "\n  caveats <<~EOS\n    This cask release is ad-hoc signed and not notarized. Install with --no-quarantine:\n\n      brew install --cask --no-quarantine clioo/drogon/drogon\n\n    Apple Silicon is supported; an Intel build is not currently published.\n  EOS\n"
+AD_HOC_CAVEAT = "\n  caveats <<~EOS\n    This cask release is ad-hoc signed and not notarized.\n\n    On Homebrew versions that support --no-quarantine, install with:\n\n      brew install --cask --no-quarantine clioo/drogon/drogon\n\n    Homebrew 6 removed --no-quarantine. On those versions, install normally,\n    try to open Drogon.app, then choose Open Anyway in System Settings > Privacy & Security.\n\n    Apple Silicon is supported; an Intel build is not currently published.\n  EOS\n"
 
 version, sha256, signed = ARGV
 abort "usage: update-cask.rb VERSION SHA256 SIGNED" unless version && sha256
