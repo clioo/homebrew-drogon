@@ -11,7 +11,15 @@ cask "drogon" do
 
   livecheck do
     url :url
-    strategy :github_releases
+    # Every Drogon release is a prerelease, which both :github_latest and
+    # the default :github_releases matching skip: match tags (including
+    # prereleases, excluding drafts) with the rc-aware version pattern.
+    regex(/v?(\d+(?:\.\d+)+(?:-rc\.\d+)?)/i)
+    strategy :github_releases do |json, regex|
+      json.reject { |release| release["draft"] }
+          .map { |release| release["tag_name"]&.[](regex, 1) }
+          .compact.uniq
+    end
   end
 
   depends_on macos: :sonoma
