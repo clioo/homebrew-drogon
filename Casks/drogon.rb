@@ -1,8 +1,8 @@
 cask "drogon" do
   arch arm: "arm64"
 
-  version "0.1.0-rc.2"
-  sha256 "81019f17414ba678a94ca37a957c2aebe227c5a52dc81c44920eac01aa3037cd"
+  version "0.1.0-rc.4"
+  sha256 "19cac2617f13fb86513d82ce6ff888e13ef88a614b767be839b1189f1875a3ad"
 
   url "https://github.com/clioo/drogon/releases/download/v#{version}/Drogon-#{version}-darwin-arm64.zip"
   name "Drogon"
@@ -40,17 +40,4 @@ cask "drogon" do
     "~/Library/Preferences/ai.clioo.drogon.plist",
     "~/Library/Saved Application State/ai.clioo.drogon.savedState",
   ]
-
-  caveats <<~EOS
-    This cask release is ad-hoc signed and not notarized.
-
-    On Homebrew versions that support --no-quarantine, install with:
-
-      brew install --cask --no-quarantine clioo/drogon/drogon
-
-    Homebrew 6 removed --no-quarantine. On those versions, install normally,
-    try to open Drogon.app, then choose Open Anyway in System Settings > Privacy & Security.
-
-    Apple Silicon is supported; an Intel build is not currently published.
-  EOS
 end
