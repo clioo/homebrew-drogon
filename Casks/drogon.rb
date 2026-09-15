@@ -1,8 +1,8 @@
 cask "drogon" do
   arch arm: "arm64"
 
-  version "0.1.0-rc.7"
-  sha256 "2d42900e2d4ef2af15d49f77e0462751b0a7e96cd63bb0d698bdd697e9a78437"
+  version "0.1.0-rc.9"
+  sha256 "86879f6786f551d508c13e3f83f2b05f5671b03901256da2a32c71941aa98eca"
 
   url "https://github.com/clioo/drogon/releases/download/v#{version}/Drogon-#{version}-darwin-arm64.zip"
   name "Drogon"
